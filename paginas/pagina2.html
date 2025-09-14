@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ley de Enfriamiento de Newton</title>
+  <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body>
+  <div class="contenido">
+    <div class="container">
+      <header>
+        <h1>Ley de Enfriamiento de Newton</h1>
+        <p class="subtitle">Determinación de la hora de muerte basado en la temperatura corporal</p>
+      </header>
+      
+      <div class="content">
+        <div class="formula-section">
+          <h2>Fórmula de Enfriamiento</h2>
+          <div class="formula">
+            T(t) = T<sub>s</sub> + (T<sub>0</sub> - T<sub>s</sub>)e<sup>-kt</sup>
+          </div>
+          
+          <p>Donde:</p>
+          <ul>
+            <li><strong>T(t)</strong>: Temperatura en el tiempo t</li>
+            <li><strong>T<sub>s</sub></strong>: Temperatura del entorno</li>
+            <li><strong>T<sub>0</sub></strong>: Temperatura inicial del objeto</li>
+            <li><strong>k</strong>: Constante de enfriamiento</li>
+            <li><strong>t</strong>: Tiempo transcurrido</li>
+          </ul>
+          
+          <div class="explanation">
+            <h3>Problema de aplicación</h3>
+            <p>Un oficial de policia encuentra un cuerpo a las 9:18 PM con una temperatura de 79.5°F. Una hora después, la temperatura es de 78.0°F. La temperatura de la habitación es constante a 69°F. Asumiendo que la temperatura normal del cuerpo vivo es de 98.6°F, determine la hora de la muerte.</p>
+          </div>
+        </div>
+        
+        <div class="calculation-section">
+          <h2>Cálculo de la hora de muerte</h2>
+          
+          <div class="input-group">
+            <label for="temp1">Temperatura a las 9:18 PM (°F):</label>
+            <input type="number" id="temp1" value="79.5" step="0.1">
+          </div>
+          
+          <div class="input-group">
+            <label for="temp2">Temperatura una hora después (°F):</label>
+            <input type="number" id="temp2" value="78.0" step="0.1">
+          </div>
+          
+          <div class="input-group">
+            <label for="roomTemp">Temperatura de la habitación (°F):</label>
+            <input type="number" id="roomTemp" value="69.0" step="0.1">
+          </div>
+          
+          <div class="input-group">
+            <label for="bodyTemp">Temperatura corporal normal (°F):</label>
+            <input type="number" id="bodyTemp" value="98.6" step="0.1">
+          </div>
+          
+          <button id="calculateDeathBtn">Calcular hora de muerte</button>
+
+          <div class="result" id="result">
+            <h3>Hora de muerte estimada:</h3>
+            <div class="time-display" id="timeOfDeath"></div>
+            <p>Tiempo transcurrido desde la muerte: <span id="timeElapsed"></span></p>
+          </div>
+          
+          <div class="explanation">
+            <h3>Pasos del cálculo:</h3>
+            <ol class="steps">
+              <li>Primero, calculamos la constante <strong>k</strong> usando las dos mediciones de temperatura con una hora de diferencia.</li>
+              <li>Luego, usamos <strong>k</strong> para determinar cuánto tiempo ha pasado desde la muerte hasta la primera medición.</li>
+              <li>Finalmente, restamos este tiempo del momento de la primera medición (9:18 PM) para obtener la hora de muerte.</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+ <script src="../scripts/script.js"></script>
+</html>

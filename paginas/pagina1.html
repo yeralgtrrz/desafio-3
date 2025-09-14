@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Edad con Carbono-14</title>
+  <link rel="stylesheet" href="../estilos/styles.css">
+</head>
+<body>
+  <div class="contenido">
+    <div class="container">
+      <h1>Determinación de Edad con Carbono-14</h1>
+      
+      <p>La descomposición radiactiva del carbono-14 sigue la fórmula:</p>
+      <div class="formula">f(t) = f(0) · e<sup>kt</sup></div>
+      
+      <p>Donde:</p>
+      <ul>
+        <li>f(0) = cantidad inicial de carbono-14</li>
+        <li>f(t) = cantidad restante después de tiempo t</li>
+        <li>k = constante de desintegración</li>
+        <li>t = tiempo transcurrido</li>
+      </ul>
+      
+      <p>La vida media del carbono-14 es de aproximadamente 5,730 años, lo que significa que después de este tiempo, queda exactamente la mitad del material original.</p>
+      
+      <form id="carbonoForm">
+        <div class="input-group">
+          <label for="percentage">Porcentaje de carbono-14 restante:</label>
+          <input type="number" id="percentage" value="77.45" step="0.01" min="0" max="100">
+        </div>
+        <button type="submit">Calcular edad</button>
+      </form>
+      
+      <div class="result" id="resultCarbono">
+        <h3>Resultado:</h3>
+        <p>La edad estimada de las huellas de Acahualinca es de <span id="age" class="highlight"></span> años.</p>
+        
+        <div class="explanation">
+          <h4>Explicación del cálculo:</h4>
+          <p>1. Primero determinamos la constante k usando la vida media (5730 años):</p>
+          <div class="formula">0.5 = e<sup>k·5730</sup> ⇒ k = ln(0.5)/5730 ≈ <span id="kValue"></span></div>
+          
+          <p>2. Luego calculamos el tiempo t para f(t) = <span id="percentageValue"></span>% de f(0):</p>
+          <div class="formula">0.7745 = e<sup>kt</sup> ⇒ t = ln(0.7745)/k ≈ <span id="tValue"></span> años</div>
+          
+          <p>3. Finalmente, redondeamos al año más cercano: <span id="roundedAge"></span> años.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+  <script src="../scripts/script.js"></script>
+</html>

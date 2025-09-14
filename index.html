@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Navbar accesible</title>
+  <link rel="stylesheet" href="./estilos/styles.css">
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Menú principal">
+    <div class="nav-inner">
+      <div class="logo">Desafio-3  Yeral Ariel Gutierrez Quispe</div>
+      <button id="menuToggle"
+              class="menu-toggle"
+              aria-controls="navLinks"
+              aria-expanded="false"
+              aria-label="Abrir menú">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./paginas/pagina1.html" class="content-link">ejercicio 1</a></li>
+        <li><a href="./paginas/pagina2.html" class="content-link">ejercicio 2</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="content">
+    <div class="contenido">
+      <p>Desafio-3 </p>
+      <p>Estudiante: Yeral Ariel Gutierrez Quispe</p>
+      <p>Materia: Metodos Numericos 1</p>
+    </div>
+  </main>
+  <script src="./scripts/script.js"></script>
+</body>
+</html>
